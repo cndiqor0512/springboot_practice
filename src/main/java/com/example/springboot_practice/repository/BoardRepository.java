@@ -13,4 +13,6 @@ public interface BoardRepository {
     List<Board> getUserBoardData(Long userId); //service에서 Boarddata를 가져오는 용도로 사용
 
     Board getBoardData(Long id);
+
+    List<Board> getListByType(String boardType);
 }

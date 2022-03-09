@@ -19,4 +19,6 @@ public class BoardService {
     public Board getBoardData(Long boardId) {
         return boardRepository.getBoardData(boardId);
     }
+
+    public List<Board> getListByType(String type) { return boardRepository.getListByType(type);}
 }

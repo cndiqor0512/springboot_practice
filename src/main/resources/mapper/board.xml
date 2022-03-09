@@ -31,4 +31,14 @@
             board_type
         FROM board where id = #{boardId}
     </select>
+    <select id="getListByType" resultType="com.example.springboot_practice.domain.Board">
+        SELECT
+            id,
+            title,
+            regdate,
+            publisher,
+            contents,
+            board_type
+        FROM board where board_type = #{boardType}
+    </select>
 </mapper>

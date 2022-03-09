@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springboot_practice.repository.CommunityRepository">
+    <select id="getCommunityList" resultType="com.example.springboot_practice.domain.Community">
+        SELECT
+            id,
+            title,
+            regdate,
+            publisher,
+            contents
+        FROM community
+    </select>
+    <select id="getCommunityData" resultType="com.example.springboot_practice.domain.Community">
+        SELECT
+            id,
+            title,
+            regdate,
+            publisher,
+            contents
+        FROM community where id = #{communityId}
+    </select>
+
+</mapper>
