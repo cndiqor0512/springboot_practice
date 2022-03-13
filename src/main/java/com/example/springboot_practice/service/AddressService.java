@@ -1,6 +1,7 @@
 package com.example.springboot_practice.service;
 
 import com.example.springboot_practice.domain.Address;
+import com.example.springboot_practice.dto.AddressResponseDto;
 import com.example.springboot_practice.repository.AddressRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -11,10 +12,10 @@ import java.util.List;
 @RequiredArgsConstructor
 public class AddressService {
     private final AddressRepository addressRepository;
-    public List<Address> getAddressList(){
+    public List<AddressResponseDto> getAddressList(){
         return addressRepository.getAddressList();
     }
-    public Address getAddress(Long userId){
+    public AddressResponseDto getAddress(Long userId){
         return addressRepository.getAddress(userId);
     }
 }

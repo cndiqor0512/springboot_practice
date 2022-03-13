@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springboot_practice.repository.FoodRepository">
+    <select id="getFoodList" resultType="com.example.springboot_practice.dto.FoodResponseDto">
+        SELECT
+            id,
+            date,
+            regdate,
+            food1,
+            food2,
+            food3,
+            food4,
+            food5,
+            food6
+        FROM food
+    </select>
+    <select id="getFoodData" resultType="com.example.springboot_practice.dto.FoodResponseDto">
+        SELECT
+            id,
+            date,
+            regdate,
+            food1,
+            food2,
+            food3,
+            food4,
+            food5,
+            food6
+        FROM food where id = #{id}
+    </select>
+</mapper>

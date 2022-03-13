@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.springboot_practice.repository.BoardRepository">
-    <select id="getList" resultType="com.example.springboot_practice.domain.Board">
+    <select id="getList" resultType="com.example.springboot_practice.dto.BoardResponseDto">
         SELECT
             id,
             title,
@@ -11,7 +11,7 @@
             board_type
         FROM board
     </select>
-    <select id="getUserBoardData" resultType="com.example.springboot_practice.domain.Board">
+    <select id="getUserBoardData" resultType="com.example.springboot_practice.dto.BoardResponseDto">
         SELECT
             id,
             title,
@@ -21,7 +21,7 @@
             board_type
         FROM board where publisher = #{userId}
     </select>
-    <select id="getBoardData" resultType="com.example.springboot_practice.domain.Board">
+    <select id="getBoardData" resultType="com.example.springboot_practice.dto.BoardResponseDto">
         SELECT
             id,
             title,
@@ -31,7 +31,7 @@
             board_type
         FROM board where id = #{boardId}
     </select>
-    <select id="getListByType" resultType="com.example.springboot_practice.domain.Board">
+    <select id="getListByType" resultType="com.example.springboot_practice.dto.BoardResponseDto">
         SELECT
             id,
             title,

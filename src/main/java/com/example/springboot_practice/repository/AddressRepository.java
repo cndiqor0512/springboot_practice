@@ -1,13 +1,14 @@
 package com.example.springboot_practice.repository;
 
 import com.example.springboot_practice.domain.Address;
+import com.example.springboot_practice.dto.AddressResponseDto;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
 @Mapper
 public interface AddressRepository {
-    List<Address> getAddressList();
+    List<AddressResponseDto> getAddressList();
 
-    Address getAddress(Long userId);
+    AddressResponseDto getAddress(Long userId);
 }
