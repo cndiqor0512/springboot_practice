@@ -12,7 +12,7 @@
             food4,
             food5,
             food6
-        FROM food
+        FROM food where is_use = 1
     </select>
     <select id="getFoodData" resultType="com.example.springboot_practice.dto.FoodResponseDto">
         SELECT
@@ -38,7 +38,7 @@
             food4,
             food5,
             food6
-        FROM food order by id desc limit 5
+        FROM food where is_use = 1 order by id desc limit 5
     </select>
     <insert id ="saveFoodData" parameterType="com.example.springboot_practice.dto.FoodRequestDto">
         INSERT INTO food (food1, food2, food3, food4, food5, food6, regdate, date) VALUES (#{food1}, #{food2}, #{food3}, #{food4}, #{food5}, #{food6}, now(), #{date})

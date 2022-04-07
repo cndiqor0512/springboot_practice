@@ -38,4 +38,6 @@ public class BoardController {
     public int updateBoardData(@RequestBody BoardUpdateRequestDto dto) {
         return boardService.updateBoardData(dto);
     }
+
+
 }

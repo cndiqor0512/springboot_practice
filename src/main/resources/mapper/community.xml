@@ -8,7 +8,7 @@
             regdate,
             publisher,
             contents
-        FROM community
+        FROM community where is_use = 1
     </select>
     <select id="getCommunityData" resultType="com.example.springboot_practice.dto.CommunityResponseDto">
         SELECT
@@ -26,7 +26,7 @@
             regdate,
             publisher,
             contents
-        FROM community order by id desc limit 10
+        FROM community where is_use = 1 order by id desc limit 10
     </select>
     <insert id ="saveCommunityData" parameterType="com.example.springboot_practice.dto.CommunityRequestDto">
         INSERT INTO community (title, regdate, publisher, contents) VALUES (#{title}, now(), #{publisher}, #{contents})

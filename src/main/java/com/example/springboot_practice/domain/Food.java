@@ -21,4 +21,5 @@ public class Food {
     private LocalDate date;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime updateDate;
+    private int isUse;
 }

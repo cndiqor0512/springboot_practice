@@ -16,4 +16,5 @@ public class Notice {
     private LocalDateTime regDate;
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private LocalDateTime updateDate;
+    private int isUse;
 }

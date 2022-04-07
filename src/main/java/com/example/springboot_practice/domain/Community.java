@@ -16,5 +16,6 @@ public class Community {
         private LocalDate regDate;
         @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
         private LocalDateTime updateDate;
+        private int isUse;
 
 }

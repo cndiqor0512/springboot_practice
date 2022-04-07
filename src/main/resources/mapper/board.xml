@@ -9,7 +9,7 @@
             publisher,
             contents,
             board_type
-        FROM board
+        FROM board where is_use = 1
     </select>
     <select id="getUserBoardData" resultType="com.example.springboot_practice.dto.BoardResponseDto">
         SELECT
@@ -39,7 +39,7 @@
             publisher,
             contents,
             board_type
-        FROM board where board_type = #{boardType}
+        FROM board where board_type = #{boardType} and is_use = 1
     </select>
     <select id="getBoardLimit" resultType="com.example.springboot_practice.dto.BoardResponseDto">
         SELECT
@@ -49,7 +49,7 @@
             publisher,
             contents,
             board_type
-        FROM board order by id desc limit 10
+        FROM board where is_use = 1 order by id desc limit 10
     </select>
     <insert id ="saveBoardData" parameterType="com.example.springboot_practice.dto.BoardRequestDto">
         INSERT INTO board (title, regdate, publisher, contents, board_type) VALUES (#{title}, now(), #{publisher}, #{contents}, #{boardType})

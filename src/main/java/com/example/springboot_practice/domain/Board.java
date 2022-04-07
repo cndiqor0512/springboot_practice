@@ -14,4 +14,5 @@ public class Board {
     @JsonFormat(pattern="yyyy-MM-dd")
     private LocalDate regDate;
     private String boardType;
+    private int isUse;
 }

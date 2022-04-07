@@ -13,4 +13,5 @@ public class Calendar {
     private LocalDate regDate;
     @JsonFormat(pattern="yyyy-MM-dd")
     private LocalDate date;
+    private int isUse;
 }

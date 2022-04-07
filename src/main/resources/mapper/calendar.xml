@@ -7,7 +7,7 @@
             date,
             regdate,
             event
-        FROM calendar
+        FROM calendar where is_use = 1
     </select>
     <select id="getCalendarData" resultType="com.example.springboot_practice.dto.CalendarResponseDto">
         SELECT
@@ -23,7 +23,7 @@
             date,
             regdate,
             event
-        FROM calendar order by id desc limit 6
+        FROM calendar where is_use = 1 order by id desc limit 6
     </select>
     <insert id ="saveCalendarData" parameterType="com.example.springboot_practice.dto.CalendarRequestDto">
         INSERT INTO calendar (date, event, regdate) VALUES (#{date}, #{event}, now())
