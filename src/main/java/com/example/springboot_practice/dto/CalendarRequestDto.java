@@ -8,5 +8,6 @@ import java.time.LocalDate;
 @Data
 public class CalendarRequestDto {
     private String event;
+    @JsonFormat(pattern="yyyy-MM-dd")
     private LocalDate date;
 }

@@ -2,6 +2,7 @@ package com.example.springboot_practice.controller;
 
 import com.example.springboot_practice.dto.CommunityRequestDto;
 import com.example.springboot_practice.dto.CommunityResponseDto;
+import com.example.springboot_practice.dto.CommunityUpdateRequestDto;
 import com.example.springboot_practice.service.CommunityService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Required;
@@ -27,6 +28,11 @@ public class CommunityController {
     @GetMapping("/api/community/{communityId}")
     public CommunityResponseDto getCommunityData(@PathVariable Long communityId) {
         return communityService.getCommunityData(communityId);
+    }
+
+    @PutMapping("/api/community")
+    public int updateCommunityData(@RequestBody CommunityUpdateRequestDto dto) {
+        return communityService.updateCommunityData(dto);
     }
 
 }

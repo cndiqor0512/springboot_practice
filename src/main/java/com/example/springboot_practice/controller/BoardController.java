@@ -2,6 +2,7 @@ package com.example.springboot_practice.controller;
 
 import com.example.springboot_practice.dto.BoardRequestDto;
 import com.example.springboot_practice.dto.BoardResponseDto;
+import com.example.springboot_practice.dto.BoardUpdateRequestDto;
 import com.example.springboot_practice.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -31,5 +32,10 @@ public class BoardController {
     @GetMapping("/api/board/type/{type}")
     public List<BoardResponseDto> getBoardListByType(@PathVariable String type) {
         return boardService.getListByType(type);
+    }
+
+    @PutMapping("/api/board")
+    public int updateBoardData(@RequestBody BoardUpdateRequestDto dto) {
+        return boardService.updateBoardData(dto);
     }
 }

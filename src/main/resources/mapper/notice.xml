@@ -31,4 +31,7 @@
     <insert id ="saveNoticeData" parameterType="com.example.springboot_practice.dto.NoticeRequestDto">
         INSERT INTO notice (title, regdate, publisher, contents) VALUES (#{title}, now(), #{publisher}, #{contents})
     </insert>
+    <update id="updateNoticeData" parameterType="com.example.springboot_practice.dto.NoticeUpdateRequestDto">
+        UPDATE notice set title = #{title}, contents = #{contents}, update_date = now() where id = #{id};
+    </update>
 </mapper>

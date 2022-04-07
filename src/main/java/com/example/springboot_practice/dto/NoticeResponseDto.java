@@ -13,5 +13,7 @@ public class NoticeResponseDto {
     private LocalDateTime regDate;
     private Long publisher;
     private String contents;
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+    private LocalDateTime updateDate;
 }
 

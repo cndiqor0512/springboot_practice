@@ -2,6 +2,7 @@ package com.example.springboot_practice.controller;
 
 import com.example.springboot_practice.dto.FoodRequestDto;
 import com.example.springboot_practice.dto.FoodResponseDto;
+import com.example.springboot_practice.dto.FoodUpdateRequestDto;
 import com.example.springboot_practice.service.FoodService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -27,4 +28,7 @@ public class FoodController {
     public FoodResponseDto getFoodData(@PathVariable Long foodId) {
         return foodService.getFoodData(foodId);
     }
+
+    @PutMapping("/api/food")
+    public int updateFoodData(@RequestBody FoodUpdateRequestDto dto){ return foodService.updateFoodData(dto);}
 }

@@ -2,6 +2,7 @@ package com.example.springboot_practice.repository;
 
 import com.example.springboot_practice.dto.CalendarRequestDto;
 import com.example.springboot_practice.dto.CalendarResponseDto;
+import com.example.springboot_practice.dto.CalendarUpdateRequestDto;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -15,4 +16,6 @@ public interface CalendarRepository {
     List<CalendarResponseDto> getCalendarLimit();
 
     void saveCalendarData(CalendarRequestDto dto);
+
+    void updateCalendarData(CalendarUpdateRequestDto dto);
 }

@@ -1,6 +1,7 @@
 package com.example.springboot_practice.service;
 import com.example.springboot_practice.dto.CalendarRequestDto;
 import com.example.springboot_practice.dto.CalendarResponseDto;
+import com.example.springboot_practice.dto.CalendarUpdateRequestDto;
 import com.example.springboot_practice.repository.CalendarRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -24,6 +25,15 @@ public class CalendarService {
         try{
             calendarRepository.saveCalendarData(dto);
             return 200;
+        }
+        catch (Exception e) {
+            throw new RuntimeException();
+        }
+    }
+    public int updateCalendarData(CalendarUpdateRequestDto dto){
+        try{
+            calendarRepository.updateCalendarData(dto);
+            return 300;
         }
         catch (Exception e) {
             throw new RuntimeException();

@@ -7,18 +7,11 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
-public class FoodResponseDto {
+public class CalendarUpdateRequestDto {
     private Long id;
-    private String food1;
-    private String food2;
-    private String food3;
-    private String food4;
-    private String food5;
-    private String food6;
-    @JsonFormat(pattern="yyyy-MM-dd")
-    private LocalDate regDate;
     @JsonFormat(pattern="yyyy-MM-dd")
     private LocalDate date;
+    private String event;
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private LocalDateTime updateDate;
 }

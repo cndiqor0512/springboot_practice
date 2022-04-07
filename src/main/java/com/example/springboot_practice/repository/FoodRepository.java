@@ -2,6 +2,7 @@ package com.example.springboot_practice.repository;
 
 import com.example.springboot_practice.dto.FoodRequestDto;
 import com.example.springboot_practice.dto.FoodResponseDto;
+import com.example.springboot_practice.dto.FoodUpdateRequestDto;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -15,4 +16,6 @@ public interface FoodRepository {
     List<FoodResponseDto> getFoodLimit();
 
     void saveFoodData(FoodRequestDto dto);
+
+    void updateFoodData(FoodUpdateRequestDto dto);
 }

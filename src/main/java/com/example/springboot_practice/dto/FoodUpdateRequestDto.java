@@ -7,8 +7,8 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
-public class FoodResponseDto {
-    private Long id;
+public class FoodUpdateRequestDto {
+    private long id;
     private String food1;
     private String food2;
     private String food3;
@@ -16,9 +16,7 @@ public class FoodResponseDto {
     private String food5;
     private String food6;
     @JsonFormat(pattern="yyyy-MM-dd")
-    private LocalDate regDate;
-    @JsonFormat(pattern="yyyy-MM-dd")
     private LocalDate date;
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime updateDate;
 }

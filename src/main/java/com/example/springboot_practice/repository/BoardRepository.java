@@ -3,6 +3,7 @@ package com.example.springboot_practice.repository;
 import com.example.springboot_practice.domain.Board;
 import com.example.springboot_practice.dto.BoardRequestDto;
 import com.example.springboot_practice.dto.BoardResponseDto;
+import com.example.springboot_practice.dto.BoardUpdateRequestDto;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -20,4 +21,6 @@ public interface BoardRepository {
     List<BoardResponseDto> getBoardLimit();
 
     void saveBoardData(BoardRequestDto dto);
+
+    void updateBoardData(BoardUpdateRequestDto dto);
 }

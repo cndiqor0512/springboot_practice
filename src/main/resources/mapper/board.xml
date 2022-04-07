@@ -54,5 +54,8 @@
     <insert id ="saveBoardData" parameterType="com.example.springboot_practice.dto.BoardRequestDto">
         INSERT INTO board (title, regdate, publisher, contents, board_type) VALUES (#{title}, now(), #{publisher}, #{contents}, #{boardType})
     </insert>
+    <update id="updateBoardData" parameterType="com.example.springboot_practice.dto.BoardUpdateRequestDto">
+        UPDATE board set title = #{title}, contents = #{contents}, update_date = now() where id = #{id};
+    </update>
 
 </mapper>

@@ -28,4 +28,7 @@
     <insert id ="saveCalendarData" parameterType="com.example.springboot_practice.dto.CalendarRequestDto">
         INSERT INTO calendar (date, event, regdate) VALUES (#{date}, #{event}, now())
     </insert>
+    <update id="updateCalendarData" parameterType="com.example.springboot_practice.dto.CalendarUpdateRequestDto">
+        UPDATE calendar set event = #{event}, date = #{date}, update_date = now() where id = #{id};
+    </update>
 </mapper>

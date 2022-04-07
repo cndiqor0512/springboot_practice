@@ -2,6 +2,7 @@ package com.example.springboot_practice.service;
 
 import com.example.springboot_practice.dto.BoardRequestDto;
 import com.example.springboot_practice.dto.BoardResponseDto;
+import com.example.springboot_practice.dto.BoardUpdateRequestDto;
 import com.example.springboot_practice.repository.BoardRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -29,6 +30,15 @@ public class BoardService {
         try {
             boardRepository.saveBoardData(dto);
             return 200;
+        } catch (Exception e) {
+            throw new RuntimeException();
+        }
+    }
+
+    public int updateBoardData(BoardUpdateRequestDto dto) {
+        try {
+            boardRepository.updateBoardData(dto);
+            return 300;
         } catch (Exception e) {
             throw new RuntimeException();
         }
