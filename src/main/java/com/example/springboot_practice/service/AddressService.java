@@ -1,6 +1,5 @@
 package com.example.springboot_practice.service;
 
-import com.example.springboot_practice.domain.Address;
 import com.example.springboot_practice.dto.AddressResponseDto;
 import com.example.springboot_practice.repository.AddressRepository;
 import lombok.RequiredArgsConstructor;

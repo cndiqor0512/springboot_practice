@@ -1,6 +1,5 @@
 package com.example.springboot_practice.service;
-
-import com.example.springboot_practice.domain.Calendar;
+import com.example.springboot_practice.dto.CalendarRequestDto;
 import com.example.springboot_practice.dto.CalendarResponseDto;
 import com.example.springboot_practice.repository.CalendarRepository;
 import lombok.RequiredArgsConstructor;
@@ -19,5 +18,15 @@ public class CalendarService {
 
     public CalendarResponseDto getCalendarData(Long id){
         return calendarRepository.getCalendarData(id);
+    }
+
+    public int saveCalendarData(CalendarRequestDto dto){
+        try{
+            calendarRepository.saveCalendarData(dto);
+            return 200;
+        }
+        catch (Exception e) {
+            throw new RuntimeException();
+        }
     }
 }

@@ -19,5 +19,17 @@
             contents
         FROM community where id = #{communityId}
     </select>
+    <select id="getCommunityLimit" resultType="com.example.springboot_practice.dto.CommunityResponseDto">
+        SELECT
+            id,
+            title,
+            regdate,
+            publisher,
+            contents
+        FROM community order by id desc limit 10
+    </select>
+    <insert id ="saveCommunityData" parameterType="com.example.springboot_practice.dto.CommunityRequestDto">
+        INSERT INTO community (title, regdate, publisher, contents) VALUES (#{title}, now(), #{publisher}, #{contents})
+    </insert>
 
 </mapper>

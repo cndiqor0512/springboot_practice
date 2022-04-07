@@ -17,4 +17,15 @@
             event
         FROM calendar where id = #{id}
     </select>
+    <select id="getCalendarLimit" resultType="com.example.springboot_practice.dto.CalendarResponseDto">
+        SELECT
+            id,
+            date,
+            regdate,
+            event
+        FROM calendar order by id desc limit 6
+    </select>
+    <insert id ="saveCalendarData" parameterType="com.example.springboot_practice.dto.CalendarRequestDto">
+        INSERT INTO calendar (date, event, regdate) VALUES (#{date}, #{event}, now())
+    </insert>
 </mapper>

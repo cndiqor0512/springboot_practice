@@ -27,4 +27,20 @@
             food6
         FROM food where id = #{id}
     </select>
+    <select id="getFoodLimit" resultType="com.example.springboot_practice.dto.FoodResponseDto">
+        SELECT
+            id,
+            date,
+            regdate,
+            food1,
+            food2,
+            food3,
+            food4,
+            food5,
+            food6
+        FROM food order by id desc limit 5
+    </select>
+    <insert id ="saveFoodData" parameterType="com.example.springboot_practice.dto.FoodRequestDto">
+        INSERT INTO food (food1, food2, food3, food4, food5, food6, regdate, date) VALUES (#{food1}, #{food2}, #{food3}, #{food4}, #{food5}, #{food6}, now(), #{date})
+    </insert>
 </mapper>

@@ -1,6 +1,5 @@
 package com.example.springboot_practice.repository;
 
-import com.example.springboot_practice.domain.User;
 import com.example.springboot_practice.dto.UserResponseDto;
 import org.apache.ibatis.annotations.Mapper;
 

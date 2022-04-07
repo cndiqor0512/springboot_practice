@@ -1,8 +1,8 @@
 package com.example.springboot_practice.repository;
 
 import com.example.springboot_practice.domain.Board;
+import com.example.springboot_practice.dto.BoardRequestDto;
 import com.example.springboot_practice.dto.BoardResponseDto;
-import com.example.springboot_practice.dto.UserBoardDataResponseDto;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -16,4 +16,8 @@ public interface BoardRepository {
     BoardResponseDto getBoardData(Long id);
 
     List<BoardResponseDto> getListByType(String boardType);
+
+    List<BoardResponseDto> getBoardLimit();
+
+    void saveBoardData(BoardRequestDto dto);
 }

@@ -19,4 +19,16 @@
             contents
         FROM notice where id = #{noticeId}
     </select>
+    <select id="getNoticeLimit" resultType="com.example.springboot_practice.dto.NoticeResponseDto">
+        SELECT
+            id,
+            title,
+            regdate,
+            publisher,
+            contents
+        FROM notice order by id desc limit 1
+    </select>
+    <insert id ="saveNoticeData" parameterType="com.example.springboot_practice.dto.NoticeRequestDto">
+        INSERT INTO notice (title, regdate, publisher, contents) VALUES (#{title}, now(), #{publisher}, #{contents})
+    </insert>
 </mapper>

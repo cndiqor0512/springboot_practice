@@ -41,4 +41,18 @@
             board_type
         FROM board where board_type = #{boardType}
     </select>
+    <select id="getBoardLimit" resultType="com.example.springboot_practice.dto.BoardResponseDto">
+        SELECT
+            id,
+            title,
+            regdate,
+            publisher,
+            contents,
+            board_type
+        FROM board order by id desc limit 10
+    </select>
+    <insert id ="saveBoardData" parameterType="com.example.springboot_practice.dto.BoardRequestDto">
+        INSERT INTO board (title, regdate, publisher, contents, board_type) VALUES (#{title}, now(), #{publisher}, #{contents}, #{boardType})
+    </insert>
+
 </mapper>
