@@ -1,5 +1,6 @@
 package com.example.springboot_practice.repository;
 
+import com.example.springboot_practice.dto.FoodDeleteRequestDto;
 import com.example.springboot_practice.dto.FoodRequestDto;
 import com.example.springboot_practice.dto.FoodResponseDto;
 import com.example.springboot_practice.dto.FoodUpdateRequestDto;
@@ -18,4 +19,6 @@ public interface FoodRepository {
     void saveFoodData(FoodRequestDto dto);
 
     void updateFoodData(FoodUpdateRequestDto dto);
+
+    void deleteFoodData(FoodDeleteRequestDto dto);
 }

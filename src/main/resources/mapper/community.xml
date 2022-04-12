@@ -34,5 +34,8 @@
     <update id="updateCommunityData" parameterType="com.example.springboot_practice.dto.CommunityUpdateRequestDto">
         UPDATE community set title = #{title}, contents = #{contents}, update_date = now() where id = #{id};
     </update>
+    <delete id="deleteCommunityData" parameterType="com.example.springboot_practice.dto.CommunityDeleteRequestDto">
+        UPDATE community set is_use = 0 where id = #{id};
+    </delete>
 
 </mapper>

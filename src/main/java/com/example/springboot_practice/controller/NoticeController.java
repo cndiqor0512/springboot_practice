@@ -1,9 +1,6 @@
 package com.example.springboot_practice.controller;
 
-import com.example.springboot_practice.dto.FoodUpdateRequestDto;
-import com.example.springboot_practice.dto.NoticeRequestDto;
-import com.example.springboot_practice.dto.NoticeResponseDto;
-import com.example.springboot_practice.dto.NoticeUpdateRequestDto;
+import com.example.springboot_practice.dto.*;
 import com.example.springboot_practice.service.NoticeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -32,4 +29,7 @@ public class NoticeController {
 
     @PutMapping("/api/notice")
     public int updateNoticeData(@RequestBody NoticeUpdateRequestDto dto){ return noticeService.updateNoticeData(dto);}
+
+    @DeleteMapping("/api/notice")
+    public int deleteNoticeData(@RequestBody NoticeDeleteRequestDto dto){ return noticeService.deleteNoticeData(dto);}
 }

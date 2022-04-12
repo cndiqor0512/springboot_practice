@@ -1,5 +1,6 @@
 package com.example.springboot_practice.controller;
 
+import com.example.springboot_practice.dto.BoardDeleteRequestDto;
 import com.example.springboot_practice.dto.BoardRequestDto;
 import com.example.springboot_practice.dto.BoardResponseDto;
 import com.example.springboot_practice.dto.BoardUpdateRequestDto;
@@ -39,5 +40,7 @@ public class BoardController {
         return boardService.updateBoardData(dto);
     }
 
+    @DeleteMapping("/api/board")
+    public int deleteBoardData(@RequestBody BoardDeleteRequestDto dto) { return boardService.deleteBoardData(dto);}
 
 }

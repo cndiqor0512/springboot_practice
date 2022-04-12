@@ -2,6 +2,7 @@ package com.example.springboot_practice.service;
 
 import com.example.springboot_practice.domain.Calendar;
 import com.example.springboot_practice.domain.Food;
+import com.example.springboot_practice.dto.FoodDeleteRequestDto;
 import com.example.springboot_practice.dto.FoodRequestDto;
 import com.example.springboot_practice.dto.FoodResponseDto;
 import com.example.springboot_practice.dto.FoodUpdateRequestDto;
@@ -37,6 +38,16 @@ public class FoodService {
         try{
             foodRepository.updateFoodData(dto);
             return 300;
+        }
+        catch(Exception e){
+            throw new RuntimeException();
+        }
+    }
+
+    public int deleteFoodData(FoodDeleteRequestDto dto){
+        try {
+            foodRepository.deleteFoodData(dto);
+            return 400;
         }
         catch(Exception e){
             throw new RuntimeException();

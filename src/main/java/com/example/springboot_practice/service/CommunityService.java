@@ -1,5 +1,6 @@
 package com.example.springboot_practice.service;
 
+import com.example.springboot_practice.dto.CommunityDeleteRequestDto;
 import com.example.springboot_practice.dto.CommunityRequestDto;
 import com.example.springboot_practice.dto.CommunityResponseDto;
 import com.example.springboot_practice.dto.CommunityUpdateRequestDto;
@@ -38,6 +39,16 @@ public class CommunityService {
             return 300;
         }
         catch(Exception e){
+            throw new RuntimeException();
+        }
+    }
+
+    public int deleteCommunityData(CommunityDeleteRequestDto dto){
+        try {
+            communityRepository.deleteCommunityData(dto);
+            return 400;
+        }
+        catch (Exception e){
             throw new RuntimeException();
         }
     }

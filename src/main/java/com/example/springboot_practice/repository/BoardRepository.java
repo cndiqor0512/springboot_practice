@@ -1,6 +1,7 @@
 package com.example.springboot_practice.repository;
 
 import com.example.springboot_practice.domain.Board;
+import com.example.springboot_practice.dto.BoardDeleteRequestDto;
 import com.example.springboot_practice.dto.BoardRequestDto;
 import com.example.springboot_practice.dto.BoardResponseDto;
 import com.example.springboot_practice.dto.BoardUpdateRequestDto;
@@ -23,4 +24,6 @@ public interface BoardRepository {
     void saveBoardData(BoardRequestDto dto);
 
     void updateBoardData(BoardUpdateRequestDto dto);
+
+    void deleteBoardData(BoardDeleteRequestDto dto);
 }

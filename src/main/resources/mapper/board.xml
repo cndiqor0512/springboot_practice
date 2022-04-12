@@ -57,5 +57,8 @@
     <update id="updateBoardData" parameterType="com.example.springboot_practice.dto.BoardUpdateRequestDto">
         UPDATE board set title = #{title}, contents = #{contents}, update_date = now() where id = #{id};
     </update>
+    <delete id="deleteBoardData" parameterType="com.example.springboot_practice.dto.BoardDeleteRequestDto">
+        UPDATE board set is_use = 0 where id = #{id};
+    </delete>
 
 </mapper>

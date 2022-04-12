@@ -1,8 +1,6 @@
 package com.example.springboot_practice.controller;
 
-import com.example.springboot_practice.dto.CalendarRequestDto;
-import com.example.springboot_practice.dto.CalendarResponseDto;
-import com.example.springboot_practice.dto.CalendarUpdateRequestDto;
+import com.example.springboot_practice.dto.*;
 import com.example.springboot_practice.service.CalendarService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -33,4 +31,7 @@ public class CalendarController {
     public int updateCalendarData(@RequestBody CalendarUpdateRequestDto dto) {
         return calendarService.updateCalendarData(dto);
     }
+
+    @DeleteMapping("/api/calendar")
+    public int deleteCalendarData(@RequestBody CalendarDeleteRequestDto dto) { return calendarService.deleteCalendarData(dto);}
 }

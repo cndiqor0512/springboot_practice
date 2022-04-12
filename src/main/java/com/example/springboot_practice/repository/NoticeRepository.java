@@ -1,5 +1,6 @@
 package com.example.springboot_practice.repository;
 
+import com.example.springboot_practice.dto.NoticeDeleteRequestDto;
 import com.example.springboot_practice.dto.NoticeRequestDto;
 import com.example.springboot_practice.dto.NoticeResponseDto;
 import com.example.springboot_practice.dto.NoticeUpdateRequestDto;
@@ -18,4 +19,6 @@ public interface NoticeRepository {
     void saveNoticeData(NoticeRequestDto dto);
 
     void updateNoticeData(NoticeUpdateRequestDto dto);
+
+    void deleteNoticeData(NoticeDeleteRequestDto dto);
 }

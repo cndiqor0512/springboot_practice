@@ -1,5 +1,6 @@
 package com.example.springboot_practice.service;
 
+import com.example.springboot_practice.dto.BoardDeleteRequestDto;
 import com.example.springboot_practice.dto.BoardRequestDto;
 import com.example.springboot_practice.dto.BoardResponseDto;
 import com.example.springboot_practice.dto.BoardUpdateRequestDto;
@@ -42,5 +43,15 @@ public class BoardService {
         } catch (Exception e) {
             throw new RuntimeException();
         }
+    }
+
+    public int deleteBoardData(BoardDeleteRequestDto dto) {
+        try {
+            boardRepository.deleteBoardData(dto);
+            return 400;
+        } catch(Exception e){
+            throw new RuntimeException();
+        }
+
     }
 }

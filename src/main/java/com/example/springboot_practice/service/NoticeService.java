@@ -1,6 +1,7 @@
 package com.example.springboot_practice.service;
 
 import com.example.springboot_practice.domain.Notice;
+import com.example.springboot_practice.dto.NoticeDeleteRequestDto;
 import com.example.springboot_practice.dto.NoticeRequestDto;
 import com.example.springboot_practice.dto.NoticeResponseDto;
 import com.example.springboot_practice.dto.NoticeUpdateRequestDto;
@@ -36,6 +37,16 @@ public class NoticeService {
             return 300;
         }
         catch(Exception e) {
+            throw new RuntimeException();
+        }
+    }
+
+    public int deleteNoticeData(NoticeDeleteRequestDto dto){
+        try{
+            noticeRepository.deleteNoticeData(dto);
+            return 400;
+        }
+        catch(Exception e){
             throw new RuntimeException();
         }
     }

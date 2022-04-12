@@ -34,4 +34,7 @@
     <update id="updateNoticeData" parameterType="com.example.springboot_practice.dto.NoticeUpdateRequestDto">
         UPDATE notice set title = #{title}, contents = #{contents}, update_date = now() where id = #{id};
     </update>
+    <delete id="deleteNoticeData" parameterType="com.example.springboot_practice.dto.NoticeDeleteRequestDto">
+        UPDATE notice set is_use = 0 where id = #{id};
+    </delete>
 </mapper>

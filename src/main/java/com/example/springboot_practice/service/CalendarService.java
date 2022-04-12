@@ -1,4 +1,5 @@
 package com.example.springboot_practice.service;
+import com.example.springboot_practice.dto.CalendarDeleteRequestDto;
 import com.example.springboot_practice.dto.CalendarRequestDto;
 import com.example.springboot_practice.dto.CalendarResponseDto;
 import com.example.springboot_practice.dto.CalendarUpdateRequestDto;
@@ -36,6 +37,15 @@ public class CalendarService {
             return 300;
         }
         catch (Exception e) {
+            throw new RuntimeException();
+        }
+    }
+
+    public int deleteCalendarData(CalendarDeleteRequestDto dto){
+        try{
+            calendarRepository.deleteCalendarData(dto);
+            return 400;
+        }catch(Exception e){
             throw new RuntimeException();
         }
     }

@@ -31,4 +31,7 @@
     <update id="updateCalendarData" parameterType="com.example.springboot_practice.dto.CalendarUpdateRequestDto">
         UPDATE calendar set event = #{event}, date = #{date}, update_date = now() where id = #{id};
     </update>
+    <delete id="deleteCalendarData" parameterType="com.example.springboot_practice.dto.CalendarDeleteRequestDto">
+        UPDATE calendar set is_use = 0 where id = #{id};
+    </delete>
 </mapper>

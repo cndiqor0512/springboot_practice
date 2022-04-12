@@ -1,5 +1,6 @@
 package com.example.springboot_practice.controller;
 
+import com.example.springboot_practice.dto.CommunityDeleteRequestDto;
 import com.example.springboot_practice.dto.CommunityRequestDto;
 import com.example.springboot_practice.dto.CommunityResponseDto;
 import com.example.springboot_practice.dto.CommunityUpdateRequestDto;
@@ -33,6 +34,11 @@ public class CommunityController {
     @PutMapping("/api/community")
     public int updateCommunityData(@RequestBody CommunityUpdateRequestDto dto) {
         return communityService.updateCommunityData(dto);
+    }
+
+    @DeleteMapping("/api/community")
+    public int deleteCommunityData(@RequestBody CommunityDeleteRequestDto dto){
+        return communityService.deleteCommunityData(dto);
     }
 
 }

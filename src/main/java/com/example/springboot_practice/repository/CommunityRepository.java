@@ -1,5 +1,6 @@
 package com.example.springboot_practice.repository;
 
+import com.example.springboot_practice.dto.CommunityDeleteRequestDto;
 import com.example.springboot_practice.dto.CommunityRequestDto;
 import com.example.springboot_practice.dto.CommunityResponseDto;
 import com.example.springboot_practice.dto.CommunityUpdateRequestDto;
@@ -18,4 +19,6 @@ public interface CommunityRepository {
     void saveCommunityData(CommunityRequestDto dto);
 
     void updateCommunityData(CommunityUpdateRequestDto dto);
+
+    void deleteCommunityData(CommunityDeleteRequestDto dto);
 }
